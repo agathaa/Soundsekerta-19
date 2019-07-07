@@ -1,0 +1,100 @@
+/* ----------------------------------------------------------------------------- */
+/* --- 1. SETUP
+/* ----------------------------------------------------------------------------- */
+
+html {
+	font-size: 14px;
+
+	@media #{$screen-xs} {
+		font-size: 13px;
+	}
+}
+
+body { 
+	position: relative;
+	color: $color-text-dark;
+	font-family: $font-primary;
+	font-weight: 400;
+	line-height: 1.6;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	color: inherit;
+	@include transition(all 0.2s ease-in-out);
+}
+
+a:hover, a:focus { text-decoration: none; color: inherit; }
+
+textarea:focus, input:focus, a:focus, a:visited, *:focus { outline: none; }
+
+iframe { border: none; }
+
+img { max-width: 100%; height: auto; -webkit-backface-visibility: hidden;}
+
+.container, .container-fluid {
+}
+
+.container-custom {
+	margin-left: 4vw;
+	margin-right: 4vw;
+
+	@media #{$screen-xl} {
+        margin-left: 9vw;
+		margin-right: 9vw;
+    }
+
+    > .main, >.sidebar {
+        &.left {
+            float: left;
+
+            @media #{$screen-sm} {
+                float: none;
+            }
+        }
+        &.right {
+            float: right;
+
+            @media #{$screen-sm} {
+                float: none;
+            }
+        }
+    }
+
+    > .main {
+    	width: 70%;
+
+        @media #{$screen-sm} {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+    }
+    > .sidebar {
+    	width: 24%;
+
+        @media #{$screen-sm} {
+            width: 100%;
+        }
+    }
+}
+
+.container-md {
+	width: 860px;
+
+	@media #{$screen-sm} {
+		width: 730px;
+    }
+    @media #{$screen-xs} {
+		width: auto;
+    }
+}
+
+.container-sm {
+	width: 500px;
+
+	@media #{$screen-xs} {
+		width: auto;
+    }
+}

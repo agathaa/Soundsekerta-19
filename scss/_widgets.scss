@@ -1,0 +1,203 @@
+/* ---------------------------------------------------------------------------- */
+/* --- 3. WIDGETS
+/* ----------------------------------------------------------------------------- */
+
+
+.widget { 
+	margin-bottom: 2.4rem;
+
+	.owl-pagination .owl-page span { 
+		width: 7px;
+		height: 7px;
+	}
+}
+
+@media #{$screen-sm} {
+	.sidebar .widget {
+		width: 47%;
+		float: left;
+
+		&:nth-child(2n-1) {
+			margin-right: 3%;
+		}
+	}
+}
+
+@media #{$screen-xs} {
+	.sidebar .widget {
+		width: 100%;
+		float: left;
+		margin-right: 0 !important;
+	}
+}
+
+/* Nav 
+----------------------------------------------------------*/
+
+.nav-widget {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		&:not(:last-child) {
+			border-bottom: 1px solid $color-line-dark;
+		}
+
+		> a {
+			font-size: 0.8rem;
+			padding: 0.8rem 0;
+			text-transform: uppercase;
+			display: block;
+			font-family: $font-secondary;
+
+			&:hover, &:focus {
+				color: $color-primary;
+			}
+		}
+
+		> ul {
+			margin-left: 1rem;
+		}
+	}
+}
+
+/* About
+----------------------------------------------------------*/
+
+.widget-about {
+	.text {
+		position: relative;
+		padding-left: 60px;
+
+		&:after {
+			position: absolute;
+			top: -54px;
+			left: -10px;
+			font-size: 10rem;
+			@include opacity(0.1);
+			content: '\201c';
+		}
+	}
+}
+
+/* Recent Posts
+----------------------------------------------------------*/
+
+.list-posts {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	> li {
+		padding-bottom: 1.2rem;
+		margin-bottom: 1.2rem;
+		border-bottom: 1px solid $color-line-dark;
+		line-height: 1.2;
+
+		> a {
+			font-weight: 500;
+			display: block;
+		}
+
+		> .date {
+			@include opacity(0.7);
+			font-size: 0.85rem;
+			font-weight: 200;
+
+			&:after {
+				width: 16px;
+				height: 16px;
+				font-family: 'themify';
+				content: '\e649';
+				font-weight: bold;
+				@include border-radius(50%);
+				background-color: $color-grey;
+				display: inline-block;
+				margin-left: 0.6rem;
+				font-size: 0.7rem;
+				line-height: 16px;
+				text-align: center;
+				color: #fff;
+			}
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.dark .list-posts > li {
+	border-color: $color-line-light;
+
+	> .date:after {
+		background-color: rgba(#fff,0.2);
+	}
+}
+
+
+/* Twitter
+----------------------------------------------------------*/
+
+.twitter-feed {
+	ul {
+		list-style: none;
+		margin: 0 0 0 2rem;
+		padding: 0;
+
+		li {
+			position: relative;
+			margin-bottom: 1.8rem;
+			font-weight: 200;
+			font-size: 0.95rem;
+
+			&:before {
+				position: absolute;
+			    top: -2px;
+			    left: -21px;
+				font-family: 'themify';
+				color: $color-twitter;
+				content: "\e74b";
+			}
+
+			.date {
+				display: block;
+				font-size: 0.8rem;
+				@include opacity(0.5);
+				margin-top: 0.5rem;
+			}
+		}
+	}
+}
+
+/* Instagram
+----------------------------------------------------------*/
+
+.instagram-grid {
+	> a {	
+		float: left;			
+		width: 32%;
+		margin-right: 2%;
+		margin-bottom: 2%;
+		cursor: pointer;
+
+		> img {
+			width: 100%;
+		}
+
+		&:nth-child(3n) {
+			margin-right: 0;
+		}
+		
+		&:hover {
+			@include opacity(0.8);
+		}
+
+	} 
+	&.no-spacing {
+		a {
+			margin: 0;
+		}
+	}
+}

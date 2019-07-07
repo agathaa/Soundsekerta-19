@@ -1,0 +1,153 @@
+/* 6.5 Calendar
+----------------------------------------------------------*/
+
+.fc-view {
+    background: #fff;
+}
+
+.fc-basic-view .fc-day-number, .fc-basic-view .fc-week-number {
+    padding: 0.2rem 0.4rem;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.fc-unthemed .fc-today {
+    background-color: #fff;
+}
+
+.fc-today {
+    color: $color-primary;
+}
+
+.fc th {
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.fc .fc-toolbar {
+    @media #{$screen-xs} {
+        .fc-left, .fc-center, .fc-right {
+            float: none;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            display: block;
+        }
+
+        > * > * {
+            float: none;
+            vertical-align: middle;
+        }
+    }
+
+    h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 35px;
+    }
+}
+
+.fc-state-default {
+    color: $color-text-dark;
+    background: $color-secondary;
+    @include box-shadow(none);
+    @include text-shadow(none);
+    border: none;
+    @include transition-default;
+
+    &:hover, &:focus, &:active {
+        outline: none;
+    }
+}
+
+.fc .fc-button-group {
+    > * {
+        margin: 0;
+
+        &:not(:first-child) {
+            border-left: 1px solid $color-line-dark;
+        }
+    }
+}
+
+.fc-event, a.fc-event {
+    background-color: $color-light;
+    border: none;
+    color: $color-text-dark;
+
+    &.primary {
+        @include gradient-primary;
+        color: #fff;
+
+        &:hover, &:focus {
+            color: #fff;
+        }
+    }
+
+    &:hover, &:focus {
+        color: $color-text-dark;
+    }
+}
+
+
+.fc-day-grid-event.fc-event, a.fc-day-grid-event.fc-event {
+    position: relative;
+    background: transparent !important;
+    padding-left: 8px;
+    border: none;
+    color: $color-text-dark;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: $color-grey;
+        content: ' ';
+        @include border-radius(2px);
+    }
+
+    &.primary {
+        &:before {
+            background-color: $color-primary;
+        }
+        &:hover, &:focus {
+            color: $color-text-dark;
+        }
+    }
+}
+
+.fc-event-dot {
+    background-color: $color-grey;
+
+    &.primary {
+        background-color: $color-primary;
+    }
+}
+
+.fc button {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: $font-secondary;
+    font-weight: 600;
+    height: 2.5rem;
+    padding: 0.4rem 1em;
+
+    &.fc-state-active {
+        @include gradient-primary;
+        color: #fff;
+    }
+}
+
+.fc-toolbar button:focus,
+.fc-toolbar .fc-state-hover, .fc-toolbar .ui-state-hover {
+    z-index: inherit;
+}
+
+.fc-state-disabled {
+    @include opacity(0.3);
+}
+
+.fc-state-down {
+    @include translateY(2px);
+}

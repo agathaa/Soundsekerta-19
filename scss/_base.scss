@@ -1,0 +1,63 @@
+@charset 'UTF-8';
+/* -----------------------------------------------------------------------------
+
+Skill - Modern & Creative HTML5 Template
+
+File:			Base SCSS File
+Version:        1.1
+Last change:    22/11/16 
+Author:			Suelo 
+
+Table of Contents:
+
+1. Document Setup
+2. Basic
+3. Header 
+4. Content 
+-- 4.1 Blog
+-- 4.2 Features
+-- 4.3 Media
+-- 4.4 Other
+-- 4.5 Page Title
+5. Footer
+6. Elements 
+-- 6.1 Ajax Modal
+-- 6.2 Backgrounds
+-- 6.3 Breadcrumbs
+-- 6.4 Buttons
+-- 6.5 Calendar
+-- 6.6 Cards
+-- 6.7 Carousel
+-- 6.8 Forms 
+-- 6.9 Icons
+-- 6.10 Images 
+-- 6.11 Loader
+-- 6.12 Modals
+-- 6.13 Navigations
+-- 6.14 Notification Bar
+-- 6.15 Pagination
+-- 6.16 Price Tables
+-- 6.17 Progress Bars
+-- 6.18 Tags
+-- 6.19 Typography
+7. Widgets 
+8. Animations 
+-------------------------------------------------------------------------------- */
+
+// Import CSS3 Mixins 
+@import "../../node_modules/compass-mixins/lib/compass/css3";
+@import "../../node_modules/compass-mixins/lib/animation/core";
+
+// Import Config 
+@import "config";
+
+// Import Styles
+@import "setup";
+@import "basics";
+@import "header";
+@import "content";
+@import "footer";
+@import "elements";
+@import "widgets";
+@import "animations";
+
