@@ -1,0 +1,214 @@
+/* 6.19 Typography 
+----------------------------------------------------------*/
+
+/* Fonts */
+
+.font-secondary { font-family: $font-secondary; }
+
+/* Headings */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	margin-top: 0;
+	font-family: $font-secondary;
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+} 
+
+
+h1, .h1 { 
+	font-size: 2.6rem;
+}
+
+h2, .h2 { 
+	font-size: 2.2rem;
+}
+
+h3, .h3 { 
+	font-weight: 600;
+}
+
+h4, .h4 { 
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+h5, .h5 { 
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+h6, h6 {
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+/* Display */
+
+.display-1, .display-2, .display-3, .display-4 {
+	font-weight: 700;
+}
+
+@media #{$screen-sm} {
+	.display-1 {
+		font-size: 5rem;
+	}
+}
+
+/* Paragraph */
+
+p {
+	font-size: 1rem;
+	font-weight: 300;
+	margin-bottom: 2rem;
+}
+
+p.lead {
+	font-size: 1.4rem;
+}
+
+/* Blockquote */
+
+.blockquotes .blockquote:nth-child(2n-1) {
+	margin-right: 3.5rem;
+}
+.blockquotes .blockquote:nth-child(2n) {
+	margin-left: 3.5rem;
+}
+
+.blockquote {
+	border: none;
+	padding: 0;
+
+	p {
+		position: relative;
+		background-color: $color-light;
+		padding: 1.5rem 2rem;
+		@include border-radius(15px 15px 0 15px);
+		font-size: 1.7rem;
+		font-weight: 300;
+		line-height: 1.2;
+		margin-bottom: 0.8rem;
+
+		&:after {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 20px 20px 0;
+			border-color: transparent $color-light transparent transparent;
+			content: ' ';
+		}
+	}
+
+	footer {
+		font-size: 0.9rem;
+		padding: 0 2rem;
+
+		&:before {
+			display: none;
+		}
+
+		img {
+			width: 32px;
+			@include border-radius(50%);
+			margin-right: 0.35rem;
+		}
+	}
+
+	&.blockquote-primary {
+		p {
+			@include gradient-primary;
+			color: #fff;
+
+			&:after {
+				border-color: transparent $color-primary-light transparent transparent;
+			}
+		}
+	}
+}
+
+/* Sizes */
+
+.text-lg { font-size: 1.3rem; }
+.text-sm { font-size: 0.95rem; }
+.text-xs { font-size: 0.85rem; }
+
+/* Colors */
+
+$k: 1;
+@for $i from 1 through length($colorVersions)/2 {
+	$type: nth($colorVersions,$k);
+	$color: nth($colorVersions,$k+1);
+
+	.text-#{$type} {
+		color: $color !important;
+	}
+	$k: $k+2;
+}
+
+.text-dark { color: $color-text-dark !important; }
+.text-muted { color: $color-text-muted !important; }
+.dark .text-muted { color: $color-text-muted-light !important;  }
+
+$k: 1;
+@for $i from 1 through length($colorVersions)/2 {
+	$type: nth($colorVersions,$k);
+	$color: nth($colorVersions,$k+1);
+
+	a.text-#{$type} {
+		&:hover, &:focus {
+			color: shade($color,20%) !important;
+		}
+	}
+	$k: $k+2;
+}
+
+/* Description */
+
+dl.description-2 {
+	dt { 
+		font-size: 10.5px;
+		@include opacity(0.4);
+		font-weight: 400;
+		font-family: $font-secondary;
+		text-transform: uppercase;
+	}
+	dd {
+		font-size: 15px;
+		font-weight: 500;
+		margin-bottom: 20px;
+
+		> .icon {
+			margin-top: 2px;
+		}
+	}
+}
+
+/* Links */
+
+.link-underline {
+	color: $color-primary;
+	text-decoration: underline;
+
+	&:hover, &:focus {
+		text-decoration: none;
+	}
+}
+
+/* Lists */
+
+ul, ol {
+	margin-bottom: 25px;
+}
+
+.list-unstyled {
+	li {
+		margin-bottom: 0.4rem;
+		display: block;
+	}
+}
+
+

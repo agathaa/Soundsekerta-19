@@ -1,0 +1,113 @@
+/* 6.1 Ajax Modal
+----------------------------------------------------------*/
+
+#ajax-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100vh;
+	z-index: 801;
+	visibility: hidden;
+	@include opacity(0);
+	@include transition-default;
+
+	.loader{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -16px;
+		margin-top: -16px;
+	}
+}
+
+#ajax-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 800;
+	display: none;
+	overflow: hidden;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0; 
+		height: 100vh;
+		width: 100vw;
+		@include scaleX(0);
+		@include transform-origin(0%, 50%);
+		background-color: $color-white;
+		content: ' ';
+		@include transition(transform 0.6s ease-out);
+		@include box-shadow(0 0 100px 0 rgba(#000,0.1));
+	}
+
+	&.loading-started {
+		&:before {
+			@include scaleY(1);
+		}
+		#ajax-loader {
+			visibility: visible;
+			@include opacity(1);
+		}
+	}
+
+	.ajax-modal-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: -30px;
+		bottom: 0;
+		height: 100vh;
+		margin-right: 30px;
+		overflow: auto;
+		display: none;
+	}
+
+	.ajax-close {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		font-size: 1.2rem;
+		visibility: hidden;
+		@include opacity(1);
+	}
+
+	&.loading-finished {
+		.ajax-close {
+			visibility: visible;
+			@include opacity(0.6);
+
+			&:hover, &:focus {
+				@include opacity(1);
+			}
+		}
+		#ajax-loader {
+			visibility: hidden;
+			@include opacity(0);
+		}
+	}
+}
+
+#ajax-tmp {
+	display: none !important;
+	visibility: hidden;
+}
+
+html.locked-scrolling,
+html.locked-scrolling body {
+  overflow: hidden;
+}
+
+.one-page.ajax-modal-open {
+	#header .nav-primary {
+		pointer-events: none;
+	}
+}

@@ -1,0 +1,73 @@
+/* 6.15 Pagination
+----------------------------------------------------------*/
+
+/* Pagination */
+
+.pagination {
+	display: block;
+	
+    > .page-item {
+        display: inline-block;
+        vertical-align: middle;
+
+        > .page-link {
+            border: none;
+            color: $color-text-dark;
+            font-weight: 700;
+            display: inline-block;
+            @include border-radius(50%);
+            @include transition-default;
+            display: block;
+
+            &:hover {
+                background-color: transparent;
+                color: $color-primary;
+            }
+        }
+
+        &:first-child, &:last-child {
+            > .page-link {
+                top: 50%;
+                width: 26px;
+                height: 26px;
+                @include border-radius(50%);
+                background-color: $color-secondary;
+                padding: 0;
+                text-align: center;
+                @include border-radius(50%);
+
+                > i {
+                	line-height: 26px;
+                	font-size: 0.8rem;
+                }
+
+                &:hover {
+                	color: $color-text-dark;
+                    background-color: shade($color-secondary,10%);
+                }
+            }
+        }
+
+        &:first-child > a {
+            &:hover {
+                @include translateX(-2px);
+            }
+        }
+
+        &:last-child > a {
+            &:hover {
+                @include translateX(2px);
+            }
+        }
+
+        &.active > .page-link {
+            color: $color-primary;
+            background-color: transparent;
+        }
+
+        &.disabled {
+            pointer-events: none;
+            @include opacity(.5);
+        }
+    }
+}

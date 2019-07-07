@@ -1,0 +1,20 @@
+/* 6.18 Tags
+----------------------------------------------------------*/
+
+.tag {
+    border: none;
+    padding: .45em .6em .3em;
+    @include border-radius(2rem);
+    text-transform: uppercase;
+}
+
+$k: 1;
+@for $i from 1 through length($colorVersions)/2 {
+    $type: nth($colorVersions,$k);
+    $color: nth($colorVersions,$k+1);
+
+    &.tag-#{$type} {
+        background-color: $color;
+    }
+    $k: $k+2;
+}

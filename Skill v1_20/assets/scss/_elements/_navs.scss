@@ -1,0 +1,141 @@
+/* 6.13 Navs
+----------------------------------------------------------*/
+
+/* Pills */
+
+.nav-pills {
+	> .nav-item {
+		display: inline-block;
+		float: none;
+
+		> .nav-link {
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			font-size: 0.8rem;
+			font-weight: 600;
+			@include border-radius(30px);
+			padding: 0.85rem 1.8rem;
+		}
+
+		&.active {
+			> .nav-link {
+				background-color: $color-primary;
+				color: #fff;
+
+				&:hover, &:focus {
+					background-color: $color-primary;
+				}
+			}
+		}
+
+		& + .nav-item {
+			margin-left: 0;
+		}
+	}
+}
+
+/* Tabs */
+
+.nav-tabs {
+
+	> .nav-item {
+
+		> .nav-link {
+			position: relative;
+			font-family: $font-secondary;
+			text-transform: uppercase;
+			font-size: 0.8rem;
+			padding: 1rem 2rem;
+			font-weight: 500;
+			margin-right: 0;
+
+			&.active {
+
+			}
+		}
+	}
+}
+
+/* Vertical Navigation */
+
+.nav-vertical > li {
+	> a {
+		position: relative; 
+		display: inline-block; 
+		font-size: 1rem;
+		font-weight: 500; 
+		padding: 0.8rem 0; 
+
+		&:hover, &:focus {
+			background: transparent;
+		}
+
+		> span { 
+			position: relative; 
+			z-index: 1; 
+		}
+
+		&.active {
+			color: $color-primary;
+			+ ul {
+				display: block;
+			}
+		}
+	} 
+
+	> ul {
+		padding: 0 10px;
+		margin:  0 0 20px;
+		list-style: none;
+		display: none;
+
+		> li {
+			> a {
+				line-height: 2.2;
+				font-size: 0.95rem;
+				@include opacity(0.5);
+
+				&:hover, &:focus {
+					@include opacity(1);
+				}
+			}
+		}
+	}
+}
+
+.nav-vertical > li:not(:last-child) { 
+	border-bottom: 1px solid rgba(0,0,0,0.1); 
+}
+.dark .nav-vertical > li { 
+	border-color: rgba(255,255,255,0.1); 
+}
+
+/* Sticky Nav */
+
+#side-navigation { 
+	width: 240px;
+
+	&.sticky {
+		position: fixed;
+		top: 0;
+	}
+}
+
+/* Nav Icons */
+
+.nav-icons {
+	margin-bottom: 40px;
+	
+	a {
+		margin-right: 15px;
+		@include opacity(0.5);
+
+		&:hover, &:focus {
+			@include opacity(1);
+		}
+	}
+}
+
+
+
+

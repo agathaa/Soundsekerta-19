@@ -1,0 +1,59 @@
+/* ---------------------------------------------------------------------------- */
+/* --- 3. CONTENT
+/* ----------------------------------------------------------------------------- */
+
+#content {
+	position: relative;
+    overflow: hidden;
+}
+
+section, .section {
+	position: relative;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    overflow: hidden;
+
+    &.cover {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+/* Sides */
+
+.bg-side {
+    position: absolute;
+    top: 50%;
+    @include translateY(-50%);
+
+    > img {
+        position: relative;
+        max-width: 30vw;
+    }
+
+    &.bg-left {
+        right: 100%;
+        direction: rtl;
+
+        &.push-inside {
+            margin-right: -7vw;
+        }
+    }
+    &.bg-right {
+        left: 100%;
+        direction: rtl;
+
+        &.push-inside {
+            margin-left: -7vw;
+        }
+    }
+}
+
+
+@import "_content/blog";
+@import "_content/features";
+@import "_content/media";
+@import "_content/other";
+@import "_content/page-title";
+
+	
